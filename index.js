@@ -8,6 +8,7 @@
  const morgan = require('morgan');
 
  const app = express();
+ const router = require('./router');
 
  /** 
   * Arguments passed to app.use() are registered as middlewares. 
@@ -18,6 +19,7 @@
  app.use(bodyParser.json({
      type: '*/*'
  }));
+ router(app);
 
  // Server setup
 const port = process.env.PORT || 3090;
