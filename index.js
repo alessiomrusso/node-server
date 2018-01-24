@@ -6,9 +6,17 @@
  const http = require('http');
  const bodyParser = require('body-parser');
  const morgan = require('morgan');
+ const mongoose = require('mongoose');
 
  const app = express();
  const router = require('./router');
+ const config = require('./config');
+
+ /*
+  * DB Setup
+  */
+  const dbString = `mongodb://${config.db.username}:${config.db.password}@${config.db.host}/${config.db.database}`;
+  mongoose.connect(dbString);
 
  /** 
   * Arguments passed to app.use() are registered as middlewares. 
