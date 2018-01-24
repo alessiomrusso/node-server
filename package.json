@@ -4,6 +4,7 @@
   "description": "A server application requiring authentication",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alessio Russo",
@@ -12,6 +13,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "mongoose": "^5.0.1",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "nodemon": "^1.14.11"
   }
 }
