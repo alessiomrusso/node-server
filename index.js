@@ -9,7 +9,15 @@
 
  const app = express();
 
- // App setup
+ /** 
+  * Arguments passed to app.use() are registered as middlewares. 
+  * Any incoming request is going to pass into every middleware by default.
+  */
+ app.use(morgan('combined'));
+ // bodyParser middleware is going to parse any incoming request of any type into json.
+ app.use(bodyParser.json({
+     type: '*/*'
+ }));
 
  // Server setup
 const port = process.env.PORT || 3090;
