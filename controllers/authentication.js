@@ -42,3 +42,7 @@ exports.signup = (request, response, next) => {
         });
     })
 }
+
+exports.signin = function(request, response, next) {
+    response.send({token: generateToken(request.user)})
+}
